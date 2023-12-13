@@ -1,23 +1,21 @@
 #include "monty.h"
 
 /**
- * pint - prints the value at the top of the stack.
- * @stack: double pointer.
- * @n: int value.
+ * f_pint - prints the value at the top of the stack.
+ * @head: double pointer.
+ * @number: int value.
  */
 void f_pint(stack_t **head, unsigned int number)
 {
-	stack_t *top;
 	(void)number;
 
-	if (head == NULL || *head == NULL)
+	if (*head == NULL)
 	{
-		return;
+		fprintf(stderr, "L%u: can't pint, stack empty\n", number);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
-	top = *head;
-	if (top == NULL)
-	{
-		return;
-	}
-	printf("%d\n", top->n);
+	printf("%d\n", (*head)->n);
 }
