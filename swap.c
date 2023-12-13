@@ -13,7 +13,7 @@ void f_swap(stack_t **head, unsigned int number)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", number);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
