@@ -6,16 +6,15 @@
 * @number: not in use
 * Return: nothing to return
 */
-
 void f_add(stack_t **head, unsigned int number)
 {
 	stack_t *temp;
 
-	(void) number;
+	(void)number;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
@@ -29,5 +28,4 @@ void f_add(stack_t **head, unsigned int number)
 	(*head)->prev = NULL;
 
 	free(temp);
-
 }
