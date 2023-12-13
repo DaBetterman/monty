@@ -15,5 +15,9 @@ void f_pint(stack_t **head, unsigned int number)
 		return;
 	}
 	top = *head;
+	if (top == NULL)
+	{
+		return;
+	}
 	printf("%d\n", top->n);
 }
