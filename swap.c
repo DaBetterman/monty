@@ -11,7 +11,7 @@ void f_swap(stack_t **head, unsigned int number)
 
 	(void)number;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", number);
 		fclose(bus.file);
