@@ -72,5 +72,6 @@ void addqueue(stack_t **head, int n);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void f_pint(stack_t **head, unsigned int number);
 void f_pop(stack_t **head, unsigned int number);
+void f_add(stack_t **head, unsigned int number);
 
 #endif
