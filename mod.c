@@ -13,14 +13,23 @@ void f_mod(stack_t **head, unsigned int number)
 
 	(void)number;
 
-	if (*head == NULL || (*head)->next == NULL || (*head)->n == 0)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't mod, stack too short or division by zero\n", number);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", number);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+
 
 	(*head)->next->n %= (*head)->n;
 
