@@ -14,7 +14,7 @@ void f_sub(stack_t **head, unsigned int number)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
